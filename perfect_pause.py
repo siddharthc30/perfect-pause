@@ -43,27 +43,24 @@ def monitor_human():
         return(return_var)
 # The above function returns the status derived through monitoring 
 
-media_player = vlc.MediaPlayer()
 
-# adding media object
-media = vlc.Media("./rm.mkv")
-
-
-# setting media to the media player
-media_player.set_media(media)
-
-media_player.audio_set_volume(100)
-
-# start playing video
-while(True):
-	media_player.play()
-	time.sleep(0)
-	value = 0
-	if(monitor_human()==1):
-		while(monitor_human()==1):
-			media_player.set_pause(1)
-			time.sleep(1)
-			if(monitor_human()==0):
-				media_player.play()
-				time.sleep(0)
-				break
+def action(pathofvideo):
+    media_player = vlc.MediaPlayer()
+    # adding media object
+    media = vlc.Media("./rm.mkv")
+    # setting media to the media player
+    media_player.set_media(media)
+    media_player.audio_set_volume(100)
+    # start playing video
+    while(True):
+        media_player.play()
+        time.sleep(0)
+        value = 0
+        if(monitor_human()==1):
+            while(monitor_human()==1):
+                media_player.set_pause(1)
+                time.sleep(1)
+                if(monitor_human()==0):
+                    media_player.play()
+                    time.sleep(0)
+                    break

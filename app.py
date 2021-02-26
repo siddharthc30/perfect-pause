@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QPushButton, QAction, QLineEdit, QMessageBox
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
+from perfect_pause import *
 
 class App(QMainWindow):
 
@@ -37,7 +38,7 @@ class App(QMainWindow):
         #QMessageBox.question(self, 'Message - pythonspot.com', "You typed: " + textboxValue, QMessageBox.Ok, QMessageBox.Ok)
         self.textbox.setText("")
 
-        print(textboxValue)
+        action(textboxValue)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
