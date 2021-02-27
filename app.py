@@ -37,7 +37,6 @@ class App(QMainWindow):
         textboxValue = self.textbox.text()
         #QMessageBox.question(self, 'Message - pythonspot.com', "You typed: " + textboxValue, QMessageBox.Ok, QMessageBox.Ok)
         self.textbox.setText("")
-
         action(textboxValue)
 
 if __name__ == '__main__':

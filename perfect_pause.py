@@ -47,7 +47,7 @@ def monitor_human():
 def action(pathofvideo):
     media_player = vlc.MediaPlayer()
     # adding media object
-    media = vlc.Media("./rm.mkv")
+    media = vlc.Media(pathofvideo)
     # setting media to the media player
     media_player.set_media(media)
     media_player.audio_set_volume(100)
@@ -64,3 +64,5 @@ def action(pathofvideo):
                     media_player.play()
                     time.sleep(0)
                     break
+
+
